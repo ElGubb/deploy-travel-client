@@ -5,20 +5,20 @@ import { useAuth } from "../../context/context";
 import logo from "../../images/Buspack.png"
 import { getAuth } from "firebase/auth";
 
-function Navbar({userlog}) {
+function Navbar({ userlog }) {
 
 
 
-const auth = getAuth();
-const user = auth.currentUser;
+  const auth = getAuth();
+  const user = auth.currentUser;
 
-if (user) {
-  // User is signed in, see docs for a list of available properties
-  // https://firebase.google.com/docs/reference/js/firebase.User
-  // ...
-} else {
-  // No user is signed in.
-}
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    // ...
+  } else {
+    // No user is signed in.
+  }
 
   const { logout } = useAuth();
 
@@ -32,19 +32,17 @@ if (user) {
 
 
 
-  
+
   return (
     <div class="navbar navbar-expand-lg">
-       <div>
-            <img src={logo} alt="Buspack" class="logo-buspack"/>
-        </div>
+      <Link to="/">
+        <button class='btn btn-sm'>
+          <img src={logo} alt="Buspack" class="logo-buspack" />
+        </button>
+      </Link>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <Link to="/">
-            <button class='btn btn-sm'>
-              Volver al home
-            </button>
-          </Link>
+
         </li>
         <li class="nav-item active">
           <Link to="/services">
@@ -54,20 +52,20 @@ if (user) {
           </Link>
         </li>
         <li class="nav-item active">
-          {userlog? <div class="userlog-container">
-            <h5>{userlog.nombre +" "+ userlog.apellido}</h5>
+          {userlog ? <div class="userlog-container">
+            <h5>{userlog.nombre + " " + userlog.apellido}</h5>
             <button
-          class='btn btn-sm'
-          onClick={handleLogout}
-        >
-          Logout
-        </button>
-          </div>: <Link to="/login">
+              class='btn btn-sm'
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </div> : <Link to="/login">
             <button class='btn btn-sm'>
               Login
             </button>
           </Link>}
-         
+
         </li>
       </ul>
     </div>
