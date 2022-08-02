@@ -1,0 +1,69 @@
+.adminViewMainContainer{
+display: flex;
+flex-direction: row;
+background-color: blue;
+}
+
+.adminViewContainerRoutes{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    background: gray;
+
+
+    width: 15vw;
+}
+.adminViewContainerRoutes button{
+ width: 100px;
+}
+.adminViewContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #CC6666;
+    justify-content:flex-start;
+    height: 50vh;
+    width: 50vw;
+  
+  
+}
+
+.adminPanelContainer{
+    display: flex;
+    flex-direction: column;
+}
+.adminPanelTitle{
+   
+    padding-bottom: 5vh;
+}
+
+.titleView{
+   
+    left: 0;
+}
+
+.btnAdd{
+   
+    right: 0;
+}
+
+.adminPanelColumn{
+border: solid 2px black;
+width: 100%;
+
+height: 10vh;
+}
+
+.adminPanelColumn > .text{
+  
+   
+}
+
+.btnEdit{
+ 
+ 
+}
+
+.btnDel{
+
+    
+}
