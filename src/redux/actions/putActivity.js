@@ -1,4 +1,4 @@
-import { PUT_ACTIVITY } from './actionTypes'
+import { PUT_ACTIVITY, API_DB } from './actionTypes'
 import axios from 'axios'
 
 export const putActivity = (id, hotel) => {
