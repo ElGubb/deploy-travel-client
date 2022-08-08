@@ -41,7 +41,9 @@ function Footer() {
                     <a target="_blank" class="fa fa-envelope"></a>
 
                 </div>
-
+                <div>
+            <Link to ="/faq" class="preguntas"> Preguntas Frecuentes</Link>
+        </div>
             </div>
 
             <div class="contactos">

@@ -4,20 +4,40 @@ import "./homeBody.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPackages } from "../../redux/actions/getPackages";
 import { getMainPackages } from "../../redux/actions/getMainPackages";
+
 import { getCities } from "../../redux/actions/getCities";
+import {loadCart} from "../../redux/actions/loadCart"
+import { getAuth } from "firebase/auth";
+
+import { getClean } from '../../redux/actions/getClean'
+
 
 export default function HomeBody() {
-  const { packages, showPackages } = useSelector((state) => state);
+  const { packages, showPackages } = useSelector((state) => state.rootReducer);
   const dispatch = useDispatch();
+  
+
+  const auth = getAuth();
+  const user = auth.currentUser;
+  useEffect(()=>{
+    if(user?.email!==undefined){
+        dispatch(loadCart(user?.email)) 
+   }
+  },[user,dispatch])
 
   useEffect(() => {
-    dispatch(getCities());
     !packages.length
       ? dispatch(getPackages())
       : !showPackages.length
       ? dispatch(getMainPackages())
       : console.log("hecho");
   }, [dispatch, packages, showPackages]);
+
+  useEffect(() => {
+     return()=>{
+      dispatch(getClean())
+    }
+  }, [dispatch]);
 
   console.log("show", showPackages);
 
@@ -57,13 +77,13 @@ export default function HomeBody() {
           {showPackages.length ? (
             showPackages.map((e) => {
               return (
-                <div class="col-12 col-md-6 col-lg-4" key={e.id}>
+                <div class="col-sm-12 col-md-6 col-lg-3" key={e.id}>
                   <Link to={`/details/${e.id}`}>
                     <div class="card">
                       <img
                         class="card-img-top"
-                        src={e.hotel.urlImage}
-                        alt="Card image cap"
+                        src={e.hotel?.urlImage}
+                        alt="Card  cap"
                       />
                       <div class="card-body ">
                         <h5 class="card-title card-main c-name ">{e.name}</h5>
@@ -97,7 +117,6 @@ export default function HomeBody() {
             </button>
           </Link>
         </div>
-
       </div>
     </>
   );

@@ -1,10 +1,10 @@
-import { POST_PACKAGE, API_DB } from './actionTypes'
+import {POST_PACKAGE} from './actionTypes'
 import axios from 'axios'
 
 export const postPackage = (packages) => {
     return async function(dispatch) {
         try {
-            let result = await axios.post(`${API_DB}/packages`, packages);
+            let result = await axios.post(`http://localhost:3001/packages`,packages);
             console.log(result.data)
             return dispatch({
                 type: POST_PACKAGE,

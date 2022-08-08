@@ -34,10 +34,14 @@
     border-top: 3px solid rgb(37, 36, 36);
 }
 
-.footer-img__container img {
-    width: 100px;
-    margin-top: 15px;
-}
+    
+    .red-social{
+        margin-bottom: 50px;
+    }
+    .footer-img__container img{
+        width: 100px;
+        margin-top: 15px;
+    }
 
 .redes h2 {
     color: #F2E1E1;
@@ -121,4 +125,44 @@
     .red-social a {
         padding-top: 10px;
     }
+    .sucursales a:hover{
+        color: #FFDE59;
+    }
+    .telefonos h2 {
+        color: #F2E1E1;
+        font-size: 14px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        font-weight: 1000;
+    }
+    .telefonos li {
+        color: #F2E1E1;
+        padding: 3px;
+        font-size: 15px;
+    
+    }
+
+
+
+    @media screen and (max-width: 700px) {
+        .footer__container{
+            flex-direction: column;
+        }
+        .copyright{
+            margin: 0 auto;
+        }
+        .red-social a {
+            padding-top: 10px;
+        }
+    }
+
+.preguntas{
+    color: #F2E1E1 ;
+    
+    font-size: 18px;
+    font-weight: 600;
+}
+.preguntas:hover{
+    color: #FFDE59;
+}
 }

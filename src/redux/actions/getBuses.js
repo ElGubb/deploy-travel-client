@@ -1,10 +1,10 @@
-import { GET_BUSES, API_DB } from './actionTypes'
+import { GET_BUSES } from './actionTypes'
 import axios from 'axios'
 
-export const getBuses = () => {
+export const getBuses= () => {
     return async function(dispatch) {
         try {
-            let result = await axios.get(`${API_DB}/business`);
+            let result = await axios.get(`http://localhost:3001/business`);
             console.log(result)
             return dispatch({
                 type: GET_BUSES,

@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
+
 function Login() {
     const [input, setInput] = useState({
         name:"",
@@ -31,7 +32,8 @@ function Login() {
   }, [input]); 
   return (
     <>
-      <div>LoginView</div>
+     
+        <div>LoginView</div>
       <form>
         <div>
           <label>Name*</label>
@@ -70,6 +72,8 @@ function Login() {
           </button>
         </div>
       </form>
+     
+      
     </>
   );
 }

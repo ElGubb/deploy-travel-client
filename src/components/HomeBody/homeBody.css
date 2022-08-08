@@ -8,7 +8,8 @@
 
 .card {
     border-radius: 0px 0px 26px 0px;
-    transition: transform 0.2s ease-in-out;
+   height: auto;
+    transition: all .3s;
 }
 
 .c-name {
@@ -65,7 +66,7 @@
     margin-bottom: 1px;
 }
 
-.btn-sm {
+/* .btn-sm {
     background-color: #FFDE59;
     color: rgb(50, 50, 50);
     border: solid 2px rgb(50, 50, 50);
@@ -77,4 +78,4 @@
     color: rgb(50, 50, 50);
     box-shadow: 0px 0px 5px 1px rgb(20, 100, 120);
     transition: box-shadow 0.2s ease-in-out;
-}
+} */
