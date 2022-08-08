@@ -41,7 +41,7 @@ const CheckoutForm = ({ total, cart }) => {
     let description = packageDetails.map((e) => e.packageName);
     console.log(description);
     const dispatch = useDispatch();
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -92,63 +92,46 @@ const CheckoutForm = ({ total, cart }) => {
     console.log(!stripe || loading);
     console.log("total", total);
 
-    return ( <
-        form className = "card card-body"
-        onSubmit = { handleSubmit } > { /* Product Information */ } <
-        img src = { logo }
-        alt = "buspack"
-        className = "img-fluid" / >
+    return (
+        <form className="card card-body" onSubmit={handleSubmit}>
+            {/* Product Information */}
+            <img src={logo} alt="buspack" className="img-fluid" />
 
-        <
-        h3 className = "text-center my-2" > Total $ { total } < /h3>
+            <h3 className="text-center my-2">Total ${total}</h3>
 
-        { /* User Card Input */ } <
-        div className = "form-group" >
-        <
-        CardElement / >
-        <
-        /div>
+            {/* User Card Input */}
+            <div className="form-group">
+                <CardElement />
+            </div>
 
-        <
-        button disabled = {!stripe }
-        className = "btn btn-success" > {
-            loading ? ( <
-                div className = "spinner-border text-light"
-                role = "status" >
-                <
-                span className = "sr-only" > Loading... < /span> < /
-                div >
-            ) : (
-                "Buy"
-            )
-        } <
-        /button> < /
-        form >
+            <button disabled={!stripe} className="btn btn-success">
+                {loading ? (
+                    <div className="spinner-border text-light" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                ) : (
+                    "Buy"
+                )}
+            </button>
+        </form>
     );
 };
 
 function Pasarela({ userlog, total, cart }) {
-    return ( <
-        div >
-        <
-        div > { userlog ? userlog.email : null } < /div> <
-        div > < /div> <
-        Elements stripe = { stripePromise } >
-        <
-        div className = "container p-4" >
-        <
-        div className = "row h-100" >
-        <
-        div className = "col-md-4 offset-md-4 h-100" >
-        <
-        CheckoutForm total = { total }
-        cart = { cart }
-        /> < /
-        div > <
-        /div> < /
-        div > <
-        /Elements> < /
-        div >
+    return (
+        <div>
+            <div>{userlog ? userlog.email : null}</div>
+            <div></div>
+            <Elements stripe={stripePromise}>
+                <div className="container p-4">
+                    <div className="row h-100">
+                        <div className="col-md-4 offset-md-4 h-100">
+                            <CheckoutForm total={total} cart={cart} />
+                        </div>
+                    </div>
+                </div>
+            </Elements>
+        </div>
     );
 }
 
