@@ -40,6 +40,7 @@ export const REMOVE_CART = "REMOVE_CART";
 export const ADD_ONE_PEOPLE = "ADD_ONE_PEOPLE";
 export const DELETE_ONE_PEOPLE = "DELETE_ONE_PEOPLE";
 export const PRUEBA = "PRUEBA";
+export const API_DB = "https://whispering-scrubland-86101.herokuapp.com";
 
 export const SEND_MAIL = "SEND_MAIL";
 export const GET_USER = "GET_USER";

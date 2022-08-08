@@ -1,10 +1,10 @@
-import { SEND_MAIL } from './actionTypes';
+import { SEND_MAIL, API_DB } from './actionTypes';
 import axios from 'axios'
 
-export const sendMail= (mail) => {
+export const sendMail = (mail) => {
     return async function(dispatch) {
         try {
-            let result = await axios.post(`http://localhost:3001/mailing`,mail);
+            let result = await axios.post(`${API_DB}/mailing`, mail);
             console.log(result.data)
             return dispatch({
                 type: SEND_MAIL,

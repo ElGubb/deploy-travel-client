@@ -1,10 +1,10 @@
-import { POST_CITY } from './actionTypes'
+import { POST_CITY, API_DB } from './actionTypes'
 import axios from 'axios'
 
-export const postCity= (city) => {
+export const postCity = (city) => {
     return async function(dispatch) {
         try {
-            let result = await axios.post(`http://localhost:3001/cities/`,city);
+            let result = await axios.post(`${API_DB}/cities/`, city);
             console.log(result.data)
             return dispatch({
                 type: POST_CITY,

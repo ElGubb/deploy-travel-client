@@ -1,11 +1,10 @@
-
-import { GET_USERS } from './actionTypes'
+import { GET_USERS, API_DB } from './actionTypes'
 import axios from 'axios'
 
-export const getUsers= () => {
+export const getUsers = () => {
     return async function(dispatch) {
         try {
-            let result = await axios.get(`http://localhost:3001/users`);    
+            let result = await axios.get(`${API_DB}/users`);
             return dispatch({
                 type: GET_USERS,
                 payload: result.data

@@ -1,10 +1,10 @@
-import { PUT_ACTIVITY } from './actionTypes'
+import { PUT_ACTIVITY, API_DB } from './actionTypes'
 import axios from 'axios'
 
-export const putActivity= (id,hotel) => {
+export const putActivity = (id, hotel) => {
     return async function(dispatch) {
         try {
-            let result = await axios.put(`http://localhost:3001/activities/${id}`,hotel);
+            let result = await axios.put(`${API_DB}/activities/${id}`, hotel);
             console.log(result.data)
             return dispatch({
                 type: PUT_ACTIVITY,
