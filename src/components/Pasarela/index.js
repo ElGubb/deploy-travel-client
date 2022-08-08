@@ -14,6 +14,7 @@ import "../Pasarela/Pasarela.css";
 import { confirmPasswordReset } from "firebase/auth";
 import axios from "axios";
 import swal from "sweetalert";
+import { API_DB } from "../../redux/actions/actionTypes";
 const stripePromise = loadStripe(
     "pk_test_51LTBDuKIottmlf7Xbtn9K29aMc0spCuzel3dOw1hX5hb5KLxKfAIWhGjh1ACx5ux3j1VRqigkN4yPNontWKFBYt200falMP3nU"
 );
@@ -115,14 +116,14 @@ const CheckoutForm = ({ total, cart }) => {
                 div className = "spinner-border text-light"
                 role = "status" >
                 <
-                span className = "sr-only" > Loading... < /span> <
-                /div>
+                span className = "sr-only" > Loading... < /span> < /
+                div >
             ) : (
                 "Buy"
             )
         } <
-        /button> <
-        /form>
+        /button> < /
+        form >
     );
 };
 
@@ -142,12 +143,12 @@ function Pasarela({ userlog, total, cart }) {
         <
         CheckoutForm total = { total }
         cart = { cart }
-        /> <
-        /div> <
-        /div> <
-        /div> <
-        /Elements> <
-        /div>
+        /> < /
+        div > <
+        /div> < /
+        div > <
+        /Elements> < /
+        div >
     );
 }
 
